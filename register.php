@@ -4,32 +4,31 @@ require_once './fn-php/fn-users.php';
 $msg_error = "";
 $msg_success = "";
 
-// TODO
-// Implementar el codi de Registre, afegint l’usuari al fitxer users.txt
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registersubmit")) {
   //TODO: improve validations
-  $username = filter_input(INPUT_POST, "username");
-  $password = filter_input(INPUT_POST, "password");
-  $name = filter_input(INPUT_POST, "name");
-  $surname = filter_input(INPUT_POST, "surname");
+  $username = trim(filter_input(INPUT_POST, "username", FILTER_SANITIZE_SPECIAL_CHARS));
+  $password = trim(filter_input(INPUT_POST, "password", FILTER_SANITIZE_SPECIAL_CHARS));
+  $name = trim(filter_input(INPUT_POST, "name", FILTER_SANITIZE_SPECIAL_CHARS));
+  $surname = trim(filter_input(INPUT_POST, "surname", FILTER_SANITIZE_SPECIAL_CHARS));
 
   // Validacions bàsiques
   if ($username === '' || $password === '' || $name === '' || $surname === '') {
       $msg_error = "Tots els camps són obligatoris.";
   } elseif (strlen($password) < 4) {
       $msg_error = "La contrasenya ha de tenir almenys 4 caràcters.";
-  } else {
+  } elseif (!preg_match("#[0-9]+#",$password)){
+      $msg_error = "La contrasenya ha de tenir almenys 1 número.";
+  }else {
       // Intentar inserir l'usuari
       $inserted = insertUser($username, $password, "registered", $name, $surname);
       if ($inserted) {
-          $msg_success = "Usuari registrat correctament! Pots iniciar sessió.";
+          $msg_success = "Usuari registrat correctament! Pots iniciar sessió."; // Registre exitós
       } else {
-          $msg_error = "Ja existeix un usuari amb aquest nom d'usuari.";
+          $msg_error = "Ja existeix un usuari amb aquest nom d'usuari."; // Error en el registre
       }
   }
 }
-
-
+// Barra de navegació
 include_once "topmenu.php";
 ?>
 <div class="container-fluid">
