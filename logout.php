@@ -1,0 +1,10 @@
+<?php
+session_start();
+if (isset($_SESSION['role'])) {  //session exists
+    session_destroy();
+    header("Location: index.php");    
+} else {
+    //TODO: decide how to treat this case.
+    //echo "<p>You must login before logout</p>";
+    //header("Location: index.php");    
+}
