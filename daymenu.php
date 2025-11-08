@@ -2,6 +2,8 @@
 session_start();
 include_once "topmenu.php";
 ?>
+
+<main class="flex-grow-1 container py-4">
 <div class="container-fluid">
     <div class="container">
         <h2>Day menu</h2>
@@ -11,5 +13,6 @@ include_once "topmenu.php";
     </div>
     <?php include_once "footer.php";?>
 </div>
+</main>
 </body>
 </html>

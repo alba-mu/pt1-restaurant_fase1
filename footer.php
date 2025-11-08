@@ -1,5 +1,5 @@
-<footer class="footer mt-auto py-3">
+<footer class="footer bg-dark text-center text-white mt-auto p-3">
   <div class="container">
-      <span class="text-muted">&copy; ProvenSoft.</span>
+      <span class="text-white">&copy; ProvenSoft.</span>
   </div>
 </footer>
