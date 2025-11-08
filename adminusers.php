@@ -17,8 +17,8 @@ include_once "topmenu.php";
                 <p>You are not allowed to acces this page!</p>
         <?php endif; ?>
         </div>
-        <?php include_once "footer.php";?>
     </div>
 </main>
+<?php include_once "footer.php";?>
 </body>
 </html>
