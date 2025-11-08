@@ -25,45 +25,48 @@
 
     <body>
     <!-- Bootstrap Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark mb-5">
         <div class="container-fluid">
             <!-- Logo -->
             <a class="navbar-brand d-flex align-items-center" href="https://www.proven.cat">
                 <img src="images/ip_logo.png" alt="Logo" class="logo-navbar me-2">
             </a>
 
-            <!-- Botón toggle (responsive) -->
+            <!-- Botó toggle (responsive) -->
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
 
-            <!-- Contenido del navbar -->
+            <!-- Contingut del navbar -->
             <div class="collapse navbar-collapse" id="navbarContent">
-                <!-- Enlaces de la izquierda -->
+                <!-- Enllaços de l'esquerra -->
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <!-- Enlaces visibles para todos -->
+                    <!-- Enllaços visibles per a tots -->
                     <li class="nav-item"><a class="nav-link" href="index.php">Home</a></li>
 
-                    <!-- Solo admin -->
+                    <!-- Només admin -->
                     <?php if ($isAdmin): ?>
                         <li class="nav-item"><a class="nav-link" href="adminmenus.php">Admin Menus</a></li>
                         <li class="nav-item"><a class="nav-link" href="adminusers.php">Admin Users</a></li>
                     <?php endif; ?>
 
-                    <!-- Solo si NO está loggeado -->
-                    <?php if (!$isLogged): ?>
-                        <li class="nav-item"><a class="nav-link" href="register.php">Register</a></li>
-                        <li class="nav-item"><a class="nav-link" href="login.php">Login</a></li>
-                    <?php endif; ?>
-
-                    <!-- Solo si SÍ está loggeado -->
+                    <!-- Només si SÍ està loggejat -->
                     <?php if ($isLogged): ?>
                         <li class="nav-item"><a class="nav-link" href="daymenu.php">Day Menu</a></li>
                         <li class="nav-item"><a class="nav-link" href="viewmenus.php">View Menus</a></li>
                     <?php endif; ?>
                 </ul>
+                
+                <!-- Informació a la dreta -->
+                <!-- Botó Login i Register només si NO està loggejat -->
+                <?php if (!$isLogged): ?>
+                    <div class="d-flex align-items-center text-white">
+                        <a class="btn btn-outline-light btn-sm me-2" href="register.php">Register</a>
+                        <a class="btn btn-outline-light btn-sm me-2" href="login.php">Login</a>
+                    </div>
+                <?php endif; ?>
 
-                <!-- Info del usuario + Logout a la derecha -->
+                <!-- Info de l'usuari + botó Logout si està loggejat -->
                 <?php if ($isLogged): ?>
                     <div class="d-flex align-items-center text-white">
                         <span class="me-3">
