@@ -37,7 +37,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
 <main class="flex-grow-1 container py-4">
   <div class="container-fluid">
     <div class="container">
-      <h2>Registration form</h2>
+      <h2 class="mb-3">Registration form</h2>
 
       <!-- Missatges -->
       <?php if ($msg_error): ?>
@@ -47,25 +47,25 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
       <?php endif; ?>
 
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="username">Username:</label>
           <input type="text" class="form-control" id="username" placeholder="Enter username" name="username"
                 value="<?php  if(!$inserted) echo htmlspecialchars($username ?? ''); ?>">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="password">Password:</label>
           <input type="password" class="form-control" id="password" placeholder="Enter password" name="password"
                 value="<?php  if(!$inserted) echo htmlspecialchars($password ?? ''); ?>">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="name">Name:</label>
           <input type="text" class="form-control" id="name" placeholder="Enter name" name="name"
                 value="<?php  if(!$inserted) echo htmlspecialchars($name ?? ''); ?>">
         </div>
 
-        <div class="form-group">
+        <div class="form-group mb-3">
           <label for="surname">Surname:</label>
           <input type="text" class="form-control" id="surname" placeholder="Enter surname" name="surname"
                 value="<?php  if(!$inserted) echo htmlspecialchars($surname ?? ''); ?>">
