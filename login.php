@@ -9,18 +9,20 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
     //search user
     $userinfo = searchUser($username);
     if (count($userinfo)!=0) {  //user found
-        //check password
+        //Comprovar contrasenya
         if ($userinfo[1] === $password) {
-        //start session
+        //iniciar sessió
         session_start();
-        //save data in session
+        //guardar data a la sessió
         $_SESSION['role'] = $userinfo[2];
         $_SESSION['name'] = $userinfo[3];
         $_SESSION['surname'] = $userinfo[4];
         header("Location: index.php");            
+        } else {  //contrasenya incorrecte
+          $msg_error = "Contrasenya incorrecte";
         }
     } else {  //user not found
-        $msg_error = "Invalid credentials";
+        $msg_error = "Usuari no trobat";
     }
 } else {
     $username = "";
