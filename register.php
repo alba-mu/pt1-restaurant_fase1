@@ -23,7 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
       // Intentar inserir l'usuari
       $inserted = insertUser($username, $password, "registered", $name, $surname);
       if ($inserted) {
-          $msg_success = "Usuari registrat correctament! Pots iniciar sessió."; // Registre exitós
+          $msg_success = "Usuari registrat correctament! Pots iniciar sessió. <a href='login.php' class='btn btn-dark text-white'>Login</a>"; // Registre exitós
           $username = $password = $name = $surname = ''; // Netejar variables per no mostrar-les al formulari
       } else {
           $msg_error = "Ja existeix un usuari amb aquest nom d'usuari."; // Error en el registre
