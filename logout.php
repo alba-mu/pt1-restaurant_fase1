@@ -25,7 +25,7 @@ if (isset($_SESSION['role'])) {  //session exists
         <div class="card text-center p-4 shadow-lg" style="max-width: 400px;">
             <div class="card-body">
                 <h2 class="card-title mb-3">Has tancat sessió correctament</h2>
-                <p class="card-text mb-4">Fins aviat!</p>
+                <p class="card-text display-6 mb-4">Fins aviat!</p>
                 <a href="index.php" class="btn btn-dark text-white w-100">Tornar a la pàgina principal</a>
             </div>
         </div>
