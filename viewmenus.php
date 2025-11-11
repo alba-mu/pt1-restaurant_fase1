@@ -3,10 +3,8 @@ session_start();
 $current_page = 'viewmenus.php';
 ?>
 
-<!--Barra de navegació-->
 <?php include_once "topmenu.php"; ?>
 
-<!-- Contingut de la pàgina -->
 <main class="flex-grow-1 container py-4">
     <div class="container-fluid">
 
@@ -23,7 +21,6 @@ $current_page = 'viewmenus.php';
     </div>
 </main>
 
-<!-- Footer -->
 <?php include_once "footer.php"; ?>
 
 </body>

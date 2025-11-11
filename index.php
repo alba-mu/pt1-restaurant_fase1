@@ -3,19 +3,15 @@ session_start();
 $current_page = 'index.php';
 ?>
 
-<!-- Barra de navegació -->
 <?php include_once "topmenu.php"; ?>
 
-<!-- Contingut de la pàgina -->
 <main class="flex-grow-1 container-fluid py-5 text-dark">
   <div class="row align-items-center justify-content-center px-5">
 
-    <!-- Columna esquerra: imatge -->
     <div class="col-lg-6 col-md-10 mb-4 mb-lg-0">
       <img src="images/restaurant.jpg" alt="Restaurant ProvenSoft" class="img-fluid rounded-4 shadow-lg w-100">
     </div>
 
-    <!-- Columna dreta: text de presentació -->
     <div class="col-lg-5 col-md-10">
       <h1 class="fw-bold mb-4">Benvinguts a ProvenSoft Restaurant</h1>
       <p class="lead mb-3">
@@ -34,7 +30,6 @@ $current_page = 'index.php';
   </div>
 </main>
 
-<!-- Footer -->
 <?php include_once "footer.php"; ?>
 
 </body>

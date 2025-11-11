@@ -34,22 +34,19 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
 }
 
 ?>
-<!--Barra de navegació-->
+
 <?php include_once "topmenu.php"; ?>
 
-<!-- Contingut de la pàgina -->
 <main class="flex-grow-1 container py-4">
   <div class="container-fluid">
     <div class="container">
 
-      <!-- Missatges -->
       <?php if ($msg_error): ?>
         <div class="alert alert-danger"><?php echo $msg_error; ?></div>
       <?php endif; ?>
 
       <h2 class="mb-3">Login form</h2>
 
-      <!-- Formulari Login -->
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
 
         <div class="form-group mb-3">
@@ -73,7 +70,6 @@ if (filter_has_var(INPUT_POST, "loginsubmit")) {
   </div>
 </main>
 
-<!-- Footer -->
 <?php include_once "footer.php"; ?>
 </body>
 

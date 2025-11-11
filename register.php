@@ -35,23 +35,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
 }
 
 ?>
-<!--Barra de navegació-->
+
 <?php include_once "topmenu.php"; ?>
 
-<!-- Contingut de la pàgina -->
 <main class="flex-grow-1 container py-4">
   <div class="container-fluid">
     <div class="container">
       <h2 class="mb-3">Registration form</h2>
 
-      <!-- Missatges -->
       <?php if ($msg_error): ?>
         <div class="alert alert-danger"><?php echo $msg_error; ?></div>
       <?php elseif ($msg_success): ?>
         <div class="alert alert-success"><?php echo $msg_success; ?></div>
       <?php endif; ?>
 
-      <!-- Formulari de registre -->
       <form action="<?php echo htmlspecialchars($_SERVER['PHP_SELF']); ?>" method="post">
         <div class="form-group mb-3">
           <label for="username">Username:</label>
@@ -83,7 +80,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && filter_has_var(INPUT_POST, "registe
   </div>
 </main>
 
-<!-- Footer -->
 <?php include_once "footer.php"; ?>
 
 </body>

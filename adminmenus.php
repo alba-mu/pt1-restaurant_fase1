@@ -4,10 +4,8 @@ $current_page = 'adminmenus.php';
 require_once './fn-php/fn-roles.php';
 ?>
 
-<!--Barra de navegació-->
 <?php include_once "topmenu.php"; ?>
 
-<!-- Contingut de la pàgina -->
 <main class="flex-grow-1 container py-4">
     <div class="container-fluid">
         <div class="container">
@@ -27,7 +25,6 @@ require_once './fn-php/fn-roles.php';
     </div>
 </main>
 
-<!-- Footer -->
 <?php include_once "footer.php"; ?>
 
 </body>
